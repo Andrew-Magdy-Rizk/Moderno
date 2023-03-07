@@ -17,6 +17,7 @@ ul {
 .container {
   padding: 0px 15px;
   margin: 0px auto;
+  overflow: hidden;
 }
 /* small */
 @media (min-width: 768px) {
@@ -38,7 +39,7 @@ ul {
   }
 }
 /* End Global Rules */
-/* Strat heading */
+/* Strat main-heading */
 .main-heading {
   text-align: center;
   margin: 0 0 60px;
@@ -52,7 +53,7 @@ ul {
   font-size: 14px;
   color: #777;
 }
-/* End heading */
+/* End main-heading */
 /* Start header */
 header {
   position: absolute;
@@ -65,7 +66,8 @@ header .container {
   align-items: center;
 }
 header .container img {
-  height: 100px;
+  height: 80px;
+  margin-top: 30px;
 }
 header .container nav i {
   font-size: 25px;
@@ -74,31 +76,26 @@ header .container nav i {
 }
 header .container .screen {
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 30%;
+  width: 0%;
   height: 100vh;
   background-color: #575757;
   position: absolute;
-  right: 0;
+  right: 0%;
   top: 0;
   text-transform: uppercase;
   text-align: center;
   color: white;
-  animation-name: animate-heading;
-  animation-duration: 0.3s;
-  animation-direction: alternate;
-  display: none;
+  transition: 0.6s;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -ms-transition: 0.6s;
+  -o-transition: 0.6s;
 }
-@keyframes animate-heading {
-  from {
-    opacity: 20%;
-  }
-  to {
-    opacity: 1;
-  }
-}
+
 header .container nav .screen i.exit {
   position: absolute;
   right: 10px;
@@ -146,20 +143,31 @@ header .container nav .screen ul li:hover {
   color: #fa694e;
 }
 header .container nav:hover .screen {
-  display: flex;
+  right: 0;
+  width: 30%;
 }
 @media (max-width: 991px) {
-  header .container .screen {
+  header .container nav:hover .screen {
     width: 60%;
   }
 }
 /* End header */
 /* Start landing */
 .landing {
-  background-color: #333;
+  background-image: url(../image/landing.jpg);
+  background-size: cover;
   height: 100vh;
   text-align: center;
   position: relative;
+}
+.landing::before {
+  content: "";
+  background-color: rgb(0 0 0 / 40%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 .landing .text {
   position: absolute;
@@ -176,16 +184,23 @@ header .container nav:hover .screen {
 }
 .landing .text h1 {
   text-transform: uppercase;
-  font-size: 50px;
+  font-size: 80px;
   font-weight: normal;
-  letter-spacing: 2px;
+}
+@media (max-width: 767px) {
+  .landing .text h1 {
+    font-size: 50px;
+  }
 }
 .landing .text p {
-  margin: 50px;
-  font-size: 12px;
+  margin: 30px;
+  font-size: 16px;
   font-weight: normal;
   line-height: 1.8;
   letter-spacing: 0.5px;
+}
+.landing .text .bottom {
+  margin-top: 80px;
 }
 .landing .text .bottom a {
   text-decoration: none;
@@ -334,20 +349,20 @@ header .container nav:hover .screen {
 }
 .stories .container .section-two .part {
   position: relative;
+  overflow: hidden;
 }
 .stories .container .section-two .part img {
   max-width: 100%;
   min-height: 100%;
 }
-.stories .container .section-two .part .plus {
+.stories .container .section-two .part::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(0 0 0 / 30%);
+  left: -100%;
+  top: 0;
   width: 100%;
   height: 100%;
-  background-color: #333;
-  opacity: 40%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
 }
 .stories .container .section-two .part i {
   position: absolute;
@@ -371,7 +386,12 @@ header .container nav:hover .screen {
   display: block;
   cursor: pointer;
 }
-.stories .container .section-two .part:hover .plus {
-  display: block;
+.stories .container .section-two .part:hover::before {
+  left: 0;
+  transition: 0.6s;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -ms-transition: 0.6s;
+  -o-transition: 0.6s;
 }
 /* End stories */
