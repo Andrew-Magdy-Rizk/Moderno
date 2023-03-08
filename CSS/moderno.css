@@ -352,8 +352,8 @@ header .container nav:hover .screen {
   overflow: hidden;
 }
 .stories .container .section-two .part img {
-  max-width: 100%;
-  min-height: 100%;
+  height: 300px;
+  width: 100%;
 }
 .stories .container .section-two .part::before {
   content: "";
@@ -362,7 +362,7 @@ header .container nav:hover .screen {
   left: -100%;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 300px;
 }
 .stories .container .section-two .part i {
   position: absolute;
@@ -395,3 +395,141 @@ header .container nav:hover .screen {
   -o-transition: 0.6s;
 }
 /* End stories */
+/* Strat Contact */
+.contact {
+  padding: 60px 0;
+}
+.contact .container .cover {
+  background-image: url(../image/contact-cover.jpg);
+  position: relative;
+  height: 300px;
+  margin: 0 auto;
+  background-size: cover;
+  margin-bottom: 60px;
+}
+.contact .container .cover::before {
+  content: "We Are Here";
+  font-size: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: rgb(0 0 0 / 60%);
+  padding: 30px;
+  color: rgb(250 105 78 / 80%);
+  border-radius: 3px;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+.contact .container .cover::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 15px;
+  border-color: rgb(0 0 0 / 60%) transparent transparent;
+  left: 50%;
+  top: calc(50% + 47.25px);
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+@media (max-width: 991px) {
+  .contact .container .cover {
+    height: 200px;
+  }
+  .contact .container .cover::before {
+    font-size: 16px;
+  }
+  .contact .container .cover::after {
+    top: calc(50% + 39.2px);
+  }
+}
+.contact .container .content {
+  display: flex;
+  justify-content: space-between;
+}
+.contact .container .content form {
+  flex-basis: 70%;
+}
+.contact .container .content form .form-one {
+  display: flex;
+  gap: 20px;
+}
+.contact .container .content form .main-text {
+  display: block;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: #f6f6f6;
+  border: none;
+}
+.contact .container .content form .main-text:focus {
+  outline: none;
+}
+.contact .container .content form input[type="submit"] {
+  width: 100%;
+  background-color: #fa694e;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  padding: 20px;
+}
+.contact .container .content .info {
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 1.6;
+  font-size: 14px;
+  color: #777;
+}
+.contact .container .content .info h4 {
+  font-size: 20px;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 5px;
+}
+.contact .container .content .info a {
+  text-decoration: none;
+  color: #777;
+}
+@media (max-width: 767px) {
+  .contact .container .content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .contact .container .content .info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+}
+/* End Contact */
+/* Strat Footer */
+footer {
+  background-color: #333;
+  color: white;
+  display: flex;
+  padding: 30px;
+  justify-content: space-around;
+}
+footer span {
+  color: #fa694e;
+  font-weight: bold;
+}
+footer .icon-footer i {
+  margin-left: 20px;
+  font-size: 20px;
+}
+/* End Footer */
